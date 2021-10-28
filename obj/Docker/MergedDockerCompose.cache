@@ -1,0 +1,72 @@
+services:
+  customerservice.command.api:
+    build:
+      context: C:\Users\gk-89\RiderProjects\OrderCase-CQRS
+      dockerfile: src/Services/CustomerService/CustomerService.Command.Api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: customerservicecommandapi
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - C:\Users\gk-89\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\gk-89\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  customerservice.query.api:
+    build:
+      context: C:\Users\gk-89\RiderProjects\OrderCase-CQRS
+      dockerfile: src/Services/CustomerService/CustomerService.Query.Api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: customerservicequeryapi
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - C:\Users\gk-89\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\gk-89\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  gateway:
+    build:
+      context: C:\Users\gk-89\RiderProjects\OrderCase-CQRS
+      dockerfile: src/Services/Gateway/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: gateway
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - C:\Users\gk-89\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\gk-89\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  orderservice.command.api:
+    build:
+      context: C:\Users\gk-89\RiderProjects\OrderCase-CQRS
+      dockerfile: src/Services/OrderService/OrderService.Command.Api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: orderservicecommandapi
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - C:\Users\gk-89\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\gk-89\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  orderservice.query.api:
+    build:
+      context: C:\Users\gk-89\RiderProjects\OrderCase-CQRS
+      dockerfile: src/Services/OrderService/OrderService.Query.Api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: orderservicequeryapi
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - C:\Users\gk-89\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\gk-89\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'

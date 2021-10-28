@@ -1,0 +1,51 @@
+version: '3.4'
+
+services:
+  customerservice.command.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+    - 8000:80
+    - "443"
+      
+  customerservice.query.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+    - 8002:80
+    - "443"
+
+
+  gateway:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+    - 80:80
+    - "443"
+
+  orderservice.command.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+    - 8001:80
+    - "443"
+
+  orderservice.query.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+    - 8003:80
+    - "443"
+
+
+  rabbitmq:
+    volumes:
+    - type: bind
+      source: ./volumes/rabbitmq
+      target: /var/lib/rabbitmq/mnesia
+      read_only: false

@@ -1,0 +1,54 @@
+version: '3.4'
+
+services:
+  customerservice.command.api:
+    image: ${DOCKER_REGISTRY-}customerservicecommandapi
+    container_name: customerservicecommand
+    build:
+      context: .
+      dockerfile: src/Services/CustomerService/CustomerService.Command.Api/Dockerfile
+
+  customerservice.query.api:
+    image: ${DOCKER_REGISTRY-}customerservicequeryapi
+    container_name: customerservicequery
+    build:
+      context: .
+      dockerfile: src/Services/CustomerService/CustomerService.Query.Api/Dockerfile
+
+
+  gateway:
+    image: ${DOCKER_REGISTRY-}gateway
+    container_name: gateway
+    build:
+      context: .
+      dockerfile: src/Services/Gateway/Dockerfile
+
+
+  orderservice.command.api:
+    image: ${DOCKER_REGISTRY-}orderservicecommandapi
+    container_name: orderservicecommand
+    build:
+      context: .
+      dockerfile: src/Services/OrderService/OrderService.Command.Api/Dockerfile
+
+
+  orderservice.query.api:
+    image: ${DOCKER_REGISTRY-}orderservicequeryapi
+    container_name: orderservicequery
+    build:
+      context: .
+      dockerfile: src/Services/OrderService/OrderService.Query.Api/Dockerfile
+      
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+    - 6379:6379
+      
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    ports:
+      - 15672:15672
+      - 5672:5672
+

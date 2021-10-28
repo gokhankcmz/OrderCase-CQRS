@@ -1,0 +1,12 @@
+# Validasyon hatalarında hatanın hangi property'den kaynaklandığı görülmüyor. Hata alt katmandan dönüyor ancak gateway handler'ı validasyon detaylarına erişemiyor.
+  Bu hata diğer case de vardı.
+  Bu bug order service post'da olmuyor.      ------------
+  
+  
+#Tekil customer'da address maplenmemiş. Diğer endpointlerde de olabilir.    -Düzeltildi
+
+#address unauth veriyor.  -düzeltildi
+
+#product'da iki tane order var. -düzeltildi
+
+#olmayan customer 404 dönüyor   --- düzeltildi

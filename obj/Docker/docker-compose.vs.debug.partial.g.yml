@@ -1,0 +1,141 @@
+version: '3.4'
+
+services:
+  customerservice.command.api:
+    image: customerservicecommandapi:dev
+    container_name: CustomerService.Command.Api
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "CustomerService.Command.Api"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_customerservice.command.api$
+    volumes:
+      - C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Services\CustomerService\CustomerService.Command.Api:/app
+      - C:\Users\gk-89\RiderProjects\OrderCase-CQRS:/src
+      - C:\Users\gk-89\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_customerservice.command.api$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_customerservice.command.api$ \"/src/src/Services/CustomerService/CustomerService.Api/bin/Debug/net5.0/CustomerService.Api.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+  customerservice.query.api:
+    image: customerservicequeryapi:dev
+    container_name: CustomerService.Query.Api
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "CustomerService.Query.Api"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_customerservice.query.api$
+    volumes:
+      - C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Services\CustomerService\CustomerService.Query.Api:/app
+      - C:\Users\gk-89\RiderProjects\OrderCase-CQRS:/src
+      - C:\Users\gk-89\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_customerservice.query.api$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_customerservice.query.api$ \"\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  gateway:
+    image: gateway:dev
+    container_name: Gateway
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "Gateway"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_gateway$
+    volumes:
+      - C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Services\Gateway:/app
+      - C:\Users\gk-89\RiderProjects\OrderCase-CQRS:/src
+      - C:\Users\gk-89\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_gateway$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_gateway$ \"/app/bin/Debug/net5.0/Gateway.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  orderservice.command.api:
+    image: orderservicecommandapi:dev
+    container_name: OrderService.Command.Api
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "OrderService.Command.Api"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_orderservice.command.api$
+    volumes:
+      - C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Services\OrderService\OrderService.Command.Api:/app
+      - C:\Users\gk-89\RiderProjects\OrderCase-CQRS:/src
+      - C:\Users\gk-89\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_orderservice.command.api$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_orderservice.command.api$ \"/src/src/Services/OrderService/OrderService.Api/bin/Debug/net5.0/OrderService.Api.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  orderservice.query.api:
+    image: orderservicequeryapi:dev
+    container_name: OrderService.Query.Api
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "OrderService.Query.Api"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_orderservice.query.api$
+    volumes:
+      - C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Services\OrderService\OrderService.Query.Api:/app
+      - C:\Users\gk-89\RiderProjects\OrderCase-CQRS:/src
+      - C:\Users\gk-89\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_orderservice.query.api$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_orderservice.query.api$ \"\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true

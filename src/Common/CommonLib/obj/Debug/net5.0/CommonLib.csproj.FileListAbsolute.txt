@@ -1,0 +1,17 @@
+C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Common\CommonLib\bin\Debug\net5.0\CommonLib.deps.json
+C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Common\CommonLib\bin\Debug\net5.0\CommonLib.dll
+C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Common\CommonLib\bin\Debug\net5.0\ref\CommonLib.dll
+C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Common\CommonLib\bin\Debug\net5.0\CommonLib.pdb
+C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Common\CommonLib\bin\Debug\net5.0\Entities.dll
+C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Common\CommonLib\bin\Debug\net5.0\Repository.dll
+C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Common\CommonLib\bin\Debug\net5.0\Entities.pdb
+C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Common\CommonLib\bin\Debug\net5.0\Repository.pdb
+C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Common\CommonLib\obj\Debug\net5.0\CommonLib.csproj.AssemblyReference.cache
+C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Common\CommonLib\obj\Debug\net5.0\CommonLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Common\CommonLib\obj\Debug\net5.0\CommonLib.AssemblyInfoInputs.cache
+C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Common\CommonLib\obj\Debug\net5.0\CommonLib.AssemblyInfo.cs
+C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Common\CommonLib\obj\Debug\net5.0\CommonLib.csproj.CoreCompileInputs.cache
+C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Common\CommonLib\obj\Debug\net5.0\CommonLib.csproj.CopyComplete
+C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Common\CommonLib\obj\Debug\net5.0\CommonLib.dll
+C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Common\CommonLib\obj\Debug\net5.0\ref\CommonLib.dll
+C:\Users\gk-89\RiderProjects\OrderCase-CQRS\src\Common\CommonLib\obj\Debug\net5.0\CommonLib.pdb
